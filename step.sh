@@ -234,6 +234,7 @@ function device_farm_run {
     fi
     
     echo $run_params
+    echo $test_params
 
     local run_response
     run_response=$(set -eu; aws devicefarm schedule-run "${run_params[@]}" --output=json)
