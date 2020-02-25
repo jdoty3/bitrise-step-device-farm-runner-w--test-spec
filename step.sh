@@ -336,7 +336,6 @@ echo_details "* android_pool: $android_pool"
 echo_details "* run_name_prefix: $run_name_prefix"
 echo_details "* build_version: $build_version"
 echo_details "* aws_region: $aws_region"
-echo_details "* test_spec_arn: $test_spec_arn"
 echo_details "* run_wait_for_results: $run_wait_for_results"
 echo_details "* run_fail_on_warning: $run_fail_on_warning"
 echo
