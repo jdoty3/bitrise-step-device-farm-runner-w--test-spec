@@ -234,6 +234,8 @@ function device_farm_run {
     fi
     
     echo $run_params
+    echo $run_params
+    echo $test_params
     echo $test_params
 
     local run_response
