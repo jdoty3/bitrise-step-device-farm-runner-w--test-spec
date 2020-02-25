@@ -222,7 +222,7 @@ function device_farm_run {
     fi
 
     if [[ -n "$test_spec_arn" ]]; then
-      test_params+=",\"testSpecArn\": \"${test_spec_arn}\""
+      test_params+=",\"testSpecArn\":\"${test_spec_arn}\""
     fi
     test_params+=",\"parameters\": {\"TestEnvVar\": \"foo\"}}"
     run_params+=(--test="$test_params")
