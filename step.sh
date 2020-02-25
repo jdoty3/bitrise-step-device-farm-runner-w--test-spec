@@ -220,9 +220,8 @@ function device_farm_run {
     if [[ -n "$filter" ]]; then
         test_params+=",\"filter\": \"${filter}\""
     fi
-
     if [[ -n "$test_spec_arn" ]]; then
-      test_params+=",\"testSpecArn\": \"${test_spec_arn}\""
+        test_params+=",\"testSpecArn\": \"${test_spec_arn}\""
     fi
     test_params+=",\"parameters\": {\"TestEnvVar\": \"foo\"}}"
     run_params+=(--test="$test_params")
@@ -232,11 +231,6 @@ function device_farm_run {
         run_params+=(--name="$run_name")
         echo_details "Using run name '$run_name'"
     fi
-    
-    echo $run_params
-    echo $run_params
-    echo $test_params
-    echo $test_params
 
     local run_response
     run_response=$(set -eu; aws devicefarm schedule-run "${run_params[@]}" --output=json)
@@ -326,9 +320,9 @@ else
 fi
 echo_details "* device_farm_project: $device_farm_project"
 echo_details "* test_package_name: $test_package_name"
-echo_details "* test_spec_arn: $test_spec_arn"
 echo_details "* test_type: $test_type"
 echo_details "* filter: $filter"
+echo_details "* test_spec_arn: $test_spec_arn"
 echo_details "* billing_method: $billing_method"
 echo_details "* locale: $locale"
 echo_details "* platform: $platform"
