@@ -210,7 +210,7 @@ function device_farm_run {
 
     # Start run
     local run_params=(--project-arn="$device_farm_project")
-    run_params+=(--device-pool-arn="device_pool")
+    run_params+=(--device-pool-arn="@$device_pool")
     run_params+=(--configuration="{\"billingMethod\": \"${billing_method}\", \"locale\": \"${locale}\"}")
     run_params+=(--app-arn="$app_arn")
     run_params+=(--output=json)
@@ -222,7 +222,7 @@ function device_farm_run {
     fi
 
     if [[ -n "$test_spec_arn" ]]; then
-      test_params+=",\"testSpecArn\":\"${test_spec_arn}\""
+      test_params+=",\"testSpecArn\": \"${test_spec_arn}\""
     fi
     test_params+=",\"parameters\": {\"TestEnvVar\": \"foo\"}}"
     run_params+=(--test="$test_params")
