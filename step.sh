@@ -211,7 +211,13 @@ function device_farm_run {
     # Start run
     local run_params=(--project-arn="$device_farm_project")
     run_params+=(--device-pool-arn="$device_pool")
-    run_params+=(--configuration="{\"billingMethod\": \"${billing_method}\", \"locale\": \"${locale}\", \"location\": {\"latitude\":${latitude}, \"longitude\":${longitude}}}")
+    run_params+=(--configuration="{\"billingMethod\": \"${billing_method}\", \"locale\": \"${locale}\"")
+    if [[ ! "${latitude}" == "" ]]; then
+      if [[ ! "${longitude}" == "" ]] then
+        run_params+=, \"location\": {\"latitude\":${latitude}, \"longitude\":${longitude}}
+      fi
+    fi
+    run_params+=}
     run_params+=(--app-arn="$app_arn")
     run_params+=(--output=json)
 
