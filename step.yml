@@ -114,6 +114,16 @@ inputs:
         - "uk_UA"
         - "vi_VN"
       is_required: false
+  - longitude: ""
+    opts:
+      title: "Longitude"
+      summary: "Longitude to request for device location. Must also inclide Latitude."
+      is_required: false
+  - latitude: ""
+    opts:
+      title: "Latitude"
+      summary: "Latitude to request for device location. Must also inclide Longitude."
+      is_required: false
   - test_package_name: ""
     opts:
       title: "Test Package Filename"
