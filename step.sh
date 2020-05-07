@@ -211,7 +211,7 @@ function device_farm_run {
     # Start run
     local run_params=(--project-arn="$device_farm_project")
     run_params+=(--device-pool-arn="$device_pool")
-    run_params+=(--configuration="{\"billingMethod\": \"${billing_method}\", \"locale\": \"${locale}\", \"location\": {\"latitude\":$LATITUDE, \"longitude\":$LONGITUDE}}")
+    run_params+=(--configuration="{\"billingMethod\": \"${billing_method}\", \"locale\": \"${locale}\", \"location\": {\"latitude\":${latitude}, \"longitude\":${longitude}}}")
     run_params+=(--app-arn="$app_arn")
     run_params+=(--output=json)
 
@@ -307,8 +307,6 @@ function device_farm_run_android {
 
 #
 # Set Longitude and Latitude
-export LONGITUDE = "40.633620"
-export LATITUDE = "-111.813160"
 # Validate parameters
 echo_info "Configs:"
 if [[ -n "$access_key_id" ]] ; then
@@ -328,8 +326,8 @@ echo_details "* filter: $filter"
 echo_details "* test_spec_arn: $test_spec_arn"
 echo_details "* billing_method: $billing_method"
 echo_details "* locale: $locale"
-echo_details "* longitude: $LONGITUDE"
-echo_details "* latitude: $LATITUDE"
+echo_details "* longitude: $longitude"
+echo_details "* latitude: $latitude"
 echo_details "* platform: $platform"
 echo_details "* ipa_path: $ipa_path"
 echo_details "* ios_pool: $ios_pool"
