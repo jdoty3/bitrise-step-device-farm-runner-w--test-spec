@@ -213,7 +213,7 @@ function device_farm_run {
     run_params+=(--device-pool-arn="$device_pool")
     run_params+=(--configuration="{\"billingMethod\": \"${billing_method}\", \"locale\": \"${locale}\"")
     if [[ ! "${latitude}" == "" ]]; then
-      if [[ ! "${longitude}" == "" ]] then
+      if [[ ! "${longitude}" == "" ]]; then
         run_params+=, \"location\": {\"latitude\":${latitude}, \"longitude\":${longitude}}
       fi
     fi
