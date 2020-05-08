@@ -214,10 +214,10 @@ function device_farm_run {
     run_params+=(--configuration="{\"billingMethod\": \"${billing_method}\", \"locale\": \"${locale}\"")
     if [[ ! "${latitude}" == "" ]]; then
       if [[ ! "${longitude}" == "" ]]; then
-        run_params+=, \"location\": {\"latitude\":${latitude}, \"longitude\":${longitude}}
+        run_params+=(, \"location\": {\"latitude\":${latitude}, \"longitude\":${longitude}})
       fi
     fi
-    run_params+=}
+    run_params+=(})
     run_params+=(--app-arn="$app_arn")
     run_params+=(--output=json)
 
