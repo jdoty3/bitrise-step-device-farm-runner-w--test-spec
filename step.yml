@@ -1,9 +1,9 @@
 title: "Custom Amazon Device Farm Runner"
-summary: "Amazon Device Farm Runner With Test spec"
+summary: "Amazon Device Farm Runner With Test spec and location"
 description: |-
   Deploys app to device farm and starts a test run. [Please see the wiki for setup instructions](https://github.com/peartherapeutics/bitrise-aws-device-farm-runner/wiki).
-website: https://github.com/peartherapeutics/bitrise-aws-device-farm-runner
-source_code_url: https://github.com/peartherapeutics/bitrise-aws-device-farm-runner
+website: https://github.com/jdoty3/bitrise-aws-device-farm-runner
+source_code_url: https://github.com/jdoty3/bitrise-aws-device-farm-runner
 support_url: https://github.com/peartherapeutics/bitrise-aws-device-farm-runner/issues
 host_os_tags:
   - linux
@@ -117,12 +117,12 @@ inputs:
   - longitude: ""
     opts:
       title: "Longitude"
-      summary: "Longitude to request for device location. Must also inclide Latitude."
+      summary: "Longitude to request for device location."
       is_required: true
   - latitude: ""
     opts:
       title: "Latitude"
-      summary: "Latitude to request for device location. Must also inclide Longitude."
+      summary: "Latitude to request for device location."
       is_required: true
   - test_package_name: ""
     opts:
