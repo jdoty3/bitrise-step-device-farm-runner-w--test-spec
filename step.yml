@@ -129,9 +129,9 @@ inputs:
       title: "Test Package Filename"
       summary: ""
       description: |-
-        Filename of test package to run.
-        This should be a filename (not a path) that matches the name of the test bundle previously uploaded with the [aws-device-farm-file-deploy](https://github.com/peartherapeutics/bitrise-aws-device-farm-file-deploy) step.
-        The most recently uploaded package with this name will be used.
+          Filename of test package to run.
+          This should be a filename (not a path) that matches the name of the test bundle previously uploaded with the [aws-device-farm-file-deploy](https://github.com/peartherapeutics/bitrise-aws-device-farm-file-deploy) step.
+          The most recently uploaded package with this name will be used.
       is_required: true
   - test_type: ""
     opts:
@@ -157,9 +157,9 @@ inputs:
       summary: ""
       description: ""
       value_options:
-          - "ios"
-          - "android"
-          - "ios+android"
+        - "ios"
+        - "android"
+        - "ios+android"
       is_required: true
   - ipa_path: "$BITRISE_IPA_PATH"
     opts:
