@@ -213,6 +213,9 @@ function device_farm_run {
     run_params+=(--device-pool-arn="$device_pool")
     run_params+=(--configuration="{\"billingMethod\": \"${billing_method}\", \"locale\": \"${locale}\", \"location\": {\"latitude\":${latitude}, \"longitude\":${longitude}}}")
     run_params+=(--app-arn="$app_arn")
+    if [[ "$platform" == "ios" ]]; then
+    run_params+=(--execution-configuration="{\"skipAppResign\": ${skip_app_resign} }")
+    fi
     run_params+=(--output=json)
 
     local test_params=''
@@ -325,6 +328,7 @@ echo_details "* test_type: $test_type"
 echo_details "* filter: $filter"
 echo_details "* test_spec_arn: $test_spec_arn"
 echo_details "* billing_method: $billing_method"
+echo_details "* skip_app_resign: $skip_app_resign"
 echo_details "* locale: $locale"
 echo_details "* longitude: $longitude"
 echo_details "* latitude: $latitude"
