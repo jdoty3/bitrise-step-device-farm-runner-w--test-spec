@@ -184,14 +184,6 @@ inputs:
       description: |
         If you want to specify a name, this prefix will be used
         followed by platform and bitrise build number.
-  - skip_app_resign: ""
-    opts:
-      title: "Skip AWS app resigning"
-      description: "AWS resigns iOS apps with their own developer certificates. Setting this to true forces that AWS to skip that step. Set to false unless using private devices"
-      is_required: true
-      value_options:
-        - "true"
-        - "false"
    - build_version: "$BITRISE_BUILD_NUMBER"
      opts:
        title: "Build Number"
