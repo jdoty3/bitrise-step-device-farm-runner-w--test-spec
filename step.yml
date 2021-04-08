@@ -184,11 +184,11 @@ inputs:
       description: |
         If you want to specify a name, this prefix will be used
         followed by platform and bitrise build number.
-   - build_version: "$BITRISE_BUILD_NUMBER"
-     opts:
-       title: "Build Number"
-       description: "Build number"
-       is_required: true
+  - build_version: "$BITRISE_BUILD_NUMBER"
+    opts:
+      title: "Build Number"
+      description: "Build number"
+      is_required: true
   - aws_region: "$AWS_REGION"
     opts:
       title: "AWS Region"
@@ -200,23 +200,23 @@ inputs:
     opts:
       title: "Whether or not to wait for the test results from device farm"
       description: |-
-        If set to true, the script waits for the test run to complete on
-        Device farm before returning success/failure. This will slow down your
-        Bitrise runs, however allows you to make decisions in subsequent steps
-        based on success/failure of the tests.
+          If set to true, the script waits for the test run to complete on
+          Device farm before returning success/failure. This will slow down your
+          Bitrise runs, however allows you to make decisions in subsequent steps
+          based on success/failure of the tests.
       value_options:
-          - "true"
-          - "false"
+        - "true"
+        - "false"
   - run_fail_on_warning: "true"
     opts:
       title: "Fail if the device farm results return result of WARNED"
       description: |-
-        Depending on your tests, you may or may not wish to fail the step if
-        Device farm returns a WARNED result. Only takes effect if
-        `run_wait_for_results` is also enabled.
+          Depending on your tests, you may or may not wish to fail the step if
+          Device farm returns a WARNED result. Only takes effect if
+          `run_wait_for_results` is also enabled.
       value_options:
-          - "true"
-          - "false"
+        - "true"
+        - "false"
 outputs:
   - BITRISE_DEVICEFARM_RESULTS_RAW:
     opts:
