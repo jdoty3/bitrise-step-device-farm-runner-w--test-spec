@@ -187,9 +187,7 @@ inputs:
   - skip_app_resign: ""
     opts:
       title: "Skip AWS app resigning"
-      description: |-
-        AWS resigns iOS apps with their own developer certificates. Setting this to true
-        forces that AWS to skip that step. Set to false unless using private devices
+      description: "AWS resigns iOS apps with their own developer certificates. Setting this to true forces that AWS to skip that step. Set to false unless using private devices"
       is_required: true
       value_options:
         - "true"
