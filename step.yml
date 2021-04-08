@@ -217,6 +217,13 @@ inputs:
       value_options:
         - "true"
         - "false"
+  - skip_app_resign: "false"
+    opts:
+      title: "Skip App re-signing"
+      description: "AWS resigns iOS apps with their developer certificates by default. Setting this value to true skips that step. Do not set to true if not on private iOS devices."
+      value_options:
+        - "true"
+        - "false"
 outputs:
   - BITRISE_DEVICEFARM_RESULTS_RAW:
     opts:
