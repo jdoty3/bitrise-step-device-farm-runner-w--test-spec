@@ -184,7 +184,7 @@ inputs:
       description: |
         If you want to specify a name, this prefix will be used
         followed by platform and bitrise build number.
-  - skip_app_resign: "false"
+  - skip_app_resign: false
     opts:
       title: "Skip AWS app resigning"
       description: |
