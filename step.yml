@@ -224,6 +224,13 @@ inputs:
       value_options:
         - "true"
         - "false"
+  - use_branch_name: "false"
+    opts:
+      title: "Use Branch As AWS Run Name"
+      description: "Causes AWS to us the branch used in the Bitrise run as the test's run name"
+      value_options:
+        - "true"
+        - "false"
 outputs:
   - BITRISE_DEVICEFARM_RESULTS_RAW:
     opts:
