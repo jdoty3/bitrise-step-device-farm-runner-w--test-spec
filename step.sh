@@ -214,7 +214,10 @@ function device_farm_run {
     run_params+=(--configuration="{\"billingMethod\": \"${billing_method}\", \"locale\": \"${locale}\", \"location\": {\"latitude\":${latitude}, \"longitude\":${longitude}}}")
     run_params+=(--app-arn="$app_arn")
     if [[ "$platform" == "ios" ]]; then
-    run_params+=(--execution-configuration="{\"skipAppResign\": ${skip_app_resign} }")
+        run_params+=(--execution-configuration="{\"skipAppResign\": ${skip_app_resign} }")
+    fi
+    if [[ "$use_branch_name" == true ]]; then
+        run_params+=(--name="$BITRISE_GIT_BRANCH")
     fi
     run_params+=(--output=json)
 
@@ -342,6 +345,7 @@ echo_details "* build_version: $build_version"
 echo_details "* aws_region: $aws_region"
 echo_details "* run_wait_for_results: $run_wait_for_results"
 echo_details "* run_fail_on_warning: $run_fail_on_warning"
+echo_details "* use_branch_name: $use_branch_name"
 echo
 
 validate_required_input "access_key_id" "${access_key_id}"
