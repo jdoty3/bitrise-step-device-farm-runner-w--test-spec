@@ -212,12 +212,8 @@ function device_farm_run {
     local run_params=(--project-arn="$device_farm_project")
     run_params+=(--device-pool-arn="$device_pool")
     
-    run_params+=(--configuration="{\"billingMethod\": \"${billing_method}\", \"locale\": \"${locale}\", \"location\": {\"latitude\":${latitude}, \"longitude\":${longitude}}")
-    if [[ "$platform" == "android" ]]; then
-        run_params+=(",\"radios\":{\"wifi\":true,\"bluetooth\":true,\"nfc\":true,\"gps\":true}}")
-    fi
-    run_params+=("}")
-    
+    run_params+=(--configuration="{\"billingMethod\": \"${billing_method}\", \"locale\": \"${locale}\", \"location\": {\"latitude\":${latitude}, \"longitude\":${longitude}},\"radios\":{\"wifi\":true,\"bluetooth\":true,\"nfc\":true,\"gps\":true}}")
+
     run_params+=(--app-arn="$app_arn")
     if [[ "$platform" == "ios" ]]; then
         run_params+=(--execution-configuration="{\"skipAppResign\": ${skip_app_resign} }")
