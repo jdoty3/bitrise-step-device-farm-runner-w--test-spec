@@ -214,7 +214,7 @@ function device_farm_run {
     
     run_params+=(--configuration="{\"billingMethod\": \"${billing_method}\", \"locale\": \"${locale}\", \"location\": {\"latitude\":${latitude}, \"longitude\":${longitude}}"
     if [[ "$platform" == "android" ]]; then
-        run_params+=", \"radios\": {\"wifi\":true,\"bluetooth\":wifi,\"nfc\":wifi,\"gps\":wifi}"
+        run_params+=",\"radios\":{\"wifi\":true,\"bluetooth\":true,\"nfc\":true,\"gps\":true}"
     fi
     run_params+="}")
     
