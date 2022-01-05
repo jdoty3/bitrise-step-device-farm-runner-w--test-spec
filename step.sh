@@ -289,7 +289,6 @@ function device_farm_run {
             fi
 
             echo_details "Run not yet completed; waiting. (Status=$run_result)"
-            sleep 30s
             run_result=$(set -eu; get_run_result "$run_arn")
         done
 
